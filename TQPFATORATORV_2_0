@@ -1,0 +1,54 @@
+Algoritmo "TQPFatorator200V2_0"
+Var
+   A, B, C, AR, CR, BR: real
+   RE: caractere
+Procedimento TQPFV2_0 (A1, B1, C1, AR1, CR1, BR1: real)
+Inicio
+      LimpaTela
+      EscrevaL("==============================================================")
+      EscrevaL("==> BEM-VINDO AO FATORADOR DE TRINÔMIOS, DIGITE OS VALORES: ==")
+      EscrevaL("==============================================================")
+      EscrevaL("=                                                            =")
+      EscrevaL("=                                                            =")
+      EscrevaL("==============================================================")
+      EscrevaL("==> Digite o valor de A (Digite 1 caso >A< for nulo:  <=======")
+      Leia(A1)
+      EscrevaL("==> Digite o valor de B: ")
+      Leia(B1)
+      EscrevaL("==> Digite o valor de C: ")
+      Leia(C1)
+      AR1 <- RaizQ(A1)
+      CR1 <- RaizQ(C1)
+      BR1 <- (2*AR1*CR1)
+      Se (BR1 = B1) entao
+        EscrevaL("O trinômio digitado foi ", A1,"x² +", B1,"x +", C1, " = ")
+        EscrevaL("============================================================")
+        EscrevaL("=>",BR1, "x Aparece quando multiplicamos 2*",AR1,"x *",CR1)
+        EscrevaL("============================================================")
+        Escreval("A forma fatorada deste T.Q.P é (", AR1,"x + ", CR1, " ) ")
+      Senao
+           Se (BR1 <> B1) entao
+             EscrevaL(" FATAL ERROR: ISTO NÃO É UM TRINÔMIO QUADRADO PERFEITO.")
+           FimSe
+      FimSe
+FimProcedimento
+Inicio
+      Repita
+            TQPFV2_0(A, B, C, AR, CR, BR)
+            EscrevaL(" ")
+            EscrevaL(" ")
+            EscrevaL("Deseja continuar [Sim/Não]?")
+            Leia(RE)
+      Ate (RE = "Não")
+      Se (RE = "Não") entao
+         LimpaTela
+         EscrevaL("========================================")
+         EscrevaL("=========>  S A I N D O . . . <=========")
+         EscrevaL("========================================")
+         EscrevaL("=                                      =")
+         EscrevaL("=                                      =")
+         EscrevaL("========================================")
+         EscrevaL("= B Y: L U K A S -- D. -- V I E I R A  =")
+         EscrevaL("========================================")
+      FimSe
+FimAlgoritmo
