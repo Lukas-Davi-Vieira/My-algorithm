@@ -10,8 +10,8 @@ Inicio
       EscrevaL("==============================================================")
       EscrevaL("=> BEM-VINDO AO CALCULADOR DE TRINÔMIOS, DIGITE OS VALORES: <=")
       EscrevaL("==============================================================")
-      EscrevaL("=      OBS: Atualmente só calculamos trinômios quadrados     ")
-      EscrevaL("=      perfeitos totalmente positivos.                       ")
+      EscrevaL("=      OBS: Atualmente só calculamos trinômios quadrados      ")
+      Escreval("            perfeitos e resolvemos EQ. de 2° grau             ")
       EscrevaL("==============================================================")
       EscrevaL("==> Digite o valor de >A< (Digite >1< caso >A< for nulo):  <==")
       Leia(A)
@@ -24,13 +24,24 @@ Inicio
       A1 <- RaizQ(A)
       C1 <- RaizQ(C)
       B1 <- (2*A1*C1)
-      Se (B1 = B) entao
-        EscrevaL("O trinômio digitado foi ", A,"x² +", B,"x +", C, " =", R)
-        Escreval("==> A forma fatorada deste T.Q.P é (", A1,"x + ", C1, " )² <==")
-        RQR <- RaizQ(R)
-        X <- (RQR - C1)
-        X <- X/A1
-        Escreva("A raiz deste trinômio é (Parte inteira): ", X)
+      Se (B < 0) entao
+         EscrevaL("O trinômio digitado foi ", A,"x²",B,"x +", C, " =", R)
+         Escreval("=> A forma fatorada deste trinômio é: ")
+         EscrevaL("(", A1,"x - ", C1," )² =")
+         RQR <- RaizQ(R)
+         X <- (RQR + C1)
+         X <- X/A1
+         Escreval("A raiz deste trinômio é: ", X)
+      SeNao
+           Se (B1 = B) entao
+              EscrevaL("O trinômio digitado foi ",A,"x² +", B,"x +", C, " =", R)
+              Escreval("=> A forma fatorada deste trinômio é: ")
+              EscrevaL("(", A1,"x + ", C1," )² =")
+              RQR <- RaizQ(R)
+              X <- (RQR - C1)
+              X <- X/A1
+           Escreva("A raiz deste trinômio é: ", X)
+           FimSe
       FimSe
 FimProcedimento
 Inicio
