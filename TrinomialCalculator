@@ -1,0 +1,57 @@
+Algoritmo "CalculadorDeTrinômios"
+Var
+   A, B, C, R, A1, B1, C1, RQR: real
+   RE: caractere
+Procedimento CDTV_1_0 (AR, BR, CR, RE, AR1, BR1, CR1, RQRE: inteiro)
+Var
+   X: real
+Inicio
+      LimpaTela
+      EscrevaL("==============================================================")
+      EscrevaL("=> BEM-VINDO AO CALCULADOR DE TRINÔMIOS, DIGITE OS VALORES: <=")
+      EscrevaL("==============================================================")
+      EscrevaL("=      OBS: Atualmente só calculamos trinômios quadrados     ")
+      EscrevaL("=      perfeitos totalmente positivos.                       ")
+      EscrevaL("==============================================================")
+      EscrevaL("==> Digite o valor de >A< (Digite >1< caso >A< for nulo):  <==")
+      Leia(A)
+      EscrevaL("==> Digite o valor de B: ")
+      Leia(B)
+      EscrevaL("==> Digite o valor de C: ")
+      Leia(C)
+      EscrevaL("==> Digite o resultado do trinômio: ")
+      Leia(R)
+      A1 <- RaizQ(A)
+      C1 <- RaizQ(C)
+      B1 <- (2*A1*C1)
+      Se (B1 = B) entao
+        EscrevaL("O trinômio digitado foi ", A,"x² +", B,"x +", C, " =", R)
+        Escreval("==> A forma fatorada deste T.Q.P é (", A1,"x + ", C1, " )² <==")
+        RQR <- RaizQ(R)
+        X <- (RQR - C1)
+        X <- X/A1
+        Escreva("A raiz deste trinômio é (Parte inteira): ", X)
+      FimSe
+FimProcedimento
+Inicio
+      Limpatela
+      Repita
+            CDTV_1_0 (A, B, C, R, A1, B1, C1, RQR)
+            EscrevaL("                                 ")
+            EscrevaL("=================================")
+            EscrevaL("=> Deseja continuar? [Sim/Não] <=")
+            EscrevaL("=================================")
+            Leia(RE)
+      Ate (RE = "Não")
+      Se (RE = "Não") entao
+         LimpaTela
+         EscrevaL("========================================")
+         EscrevaL("=========>  S A I N D O . . . <=========")
+         EscrevaL("========================================")
+         EscrevaL("=                                      =")
+         EscrevaL("=                                      =")
+         EscrevaL("========================================")
+         EscrevaL("= B Y: L U K A S -- D. -- V I E I R A  =")
+         EscrevaL("========================================")
+      FimSe
+FimAlgoritmo
