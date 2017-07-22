@@ -1,0 +1,32 @@
+repeat
+  function delta(A, B, C)
+    delta = (B^2) - (4*A*C)
+    return delta
+  end
+  print("= Bem vindo à máquina de resolução trinomial pela fórmula geral. =")
+  print("Digite o valor do coeficiente A: ")
+  A = io.read()
+  print("Digite o valor do coeficiente B: ")
+  B = io.read()
+  print("Digite o valor do coeficiente C: ")
+  C = io.read()
+  Bhaskara = (-B)
+  delta(A, B, C)
+  if delta < 0 then
+    print("Essa equação não possuí raízes reais. ")
+  elseif delta == 0 then
+    print("Essa equação possúi duas raízes reais e iguais. ")
+    FB1 = (Bhaskara + math.sqrt(delta)) / (2*A)
+    FB2 = (Bhaskara - math.sqrt(delta)) / (2*A)
+    print("X¹ = " .. FB1)
+    print("X² = " .. FB2)
+  else
+    print("Essa equação possuí duas raízes reais e diferentes. ")
+    FB1 = (Bhaskara + math.sqrt(delta)) / (2*A)
+    FB2 = (Bhaskara - math.sqrt(delta)) / (2*A)
+    print("X¹ = " .. FB1)
+    print("X² = " .. FB2)
+  end
+  print("Quer continuar? \(Responda com \"Sim\" ou \"Não\"\)")
+  resposta1 = io.read()
+until (resposta1 == "Não")
